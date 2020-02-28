@@ -99,52 +99,23 @@ function App() {
 
   let compareValues = (key, order='asc') => {
     return function(a, b) {
-        if(!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
-            return 0;   
-        }
-        const varA = (typeof a[key] === 'string') ? a[key].toUpperCase() : a[key];
-        const varB = (typeof b[key] === 'string') ? b[key].toUpperCase() : b[key];
-        let comparison = 0;
-        if (varA > varB) {
-            comparison = 1;
-        } else if (varA < varB) {
-            comparison = -1;
-        }
-        return (
-            (order === 'desc') ? (comparison * -1) : comparison
-        );
+      if(!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+          return 0;   
+      }
+      const varA = (typeof a[key] === 'string') ? a[key].toUpperCase() : a[key];
+      const varB = (typeof b[key] === 'string') ? b[key].toUpperCase() : b[key];
+      let comparison = 0;
+      if (varA > varB) {
+          comparison = 1;
+      } else if (varA < varB) {
+          comparison = -1;
+      }
+      return (
+          (order === 'desc') ? (comparison * -1) : comparison
+      );
     };
-}
-
-  // List tasks sort
-  // if(order.type === 'name') {
-  //   if(order.direction === 'asc') {
-  //     tasks.sort((task01, task02) => {
-  //       if (task01.name.toLowerCase() < task02.name.toLowerCase()) //sort string ascending
-  //         return -1;
-  //       if (task01.name.toLowerCase() > task02.name.toLowerCase())
-  //         return 1;
-  //       return 0;
-  //     })
-  //   }
-  //   else {
-  //     tasks.sort((task01, task02) => {
-  //       if (task01.name.toLowerCase() < task02.name.toLowerCase()) //sort string ascending
-  //         return 1;
-  //       if (task01.name.toLowerCase() > task02.name.toLowerCase())
-  //         return -1;
-  //       return 0;
-  //     })
-  //   }
-  // }
-
-  // if(order.type === 'level') {
-  //   if(order.direction === 'asc') {
-  //     tasks.sort((task01, task02) => task01.level - task02.level);
-  //   }
-  //   else tasks.sort((task01, task02) => task02.level - task01.level);
-  // }
-
+  }
+  
   let handleOpenForm = () => {
     setIsVisible(true);
   }
