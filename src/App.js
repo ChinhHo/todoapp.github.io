@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import uuid from 'react-uuid';
 
 import Title from './components/Title';
@@ -23,10 +23,17 @@ function App() {
 
   const onCancel = useCallback(
     () => {
-      setIsVisible(false);
+      setIsVisible(false);          
     },
     []
   )
+
+
+  useEffect(() => {
+    
+  }, [onCancel])
+  
+
   const onSave = useCallback(
     () => {
             
@@ -118,6 +125,11 @@ function App() {
   
   let handleOpenForm = () => {
     setIsVisible(true);
+    setOneTask({
+      id: '',
+      name: '',
+      level: 0
+    }) 
   }
 
 

@@ -22,11 +22,11 @@ let _tasks = [
 let _levels = [
     {
         name: 'Small',
-        tag: 'badge-secondary'
+        tag: 'badge-info'
     },
     {
         name: 'Medium',
-        tag: 'badge-info'
+        tag: 'badge-warning'
     },
     {
         name: 'High',
