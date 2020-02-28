@@ -28,12 +28,6 @@ function App() {
     []
   )
 
-
-  useEffect(() => {
-    
-  }, [onCancel])
-  
-
   const onSave = useCallback(
     () => {
             
