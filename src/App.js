@@ -84,6 +84,10 @@ function App() {
     setTextSearch(text);   
   } 
 
+  let handleClearSearch = () => {
+    setTextSearch('');
+  }
+
   let handleSort = (type,direction) => {
     setOrder({
       type,
@@ -152,7 +156,10 @@ function App() {
   }
 
   let returnTasks = (list) => {
-    return list.filter(item => item.name.indexOf(textSearch) !== -1);
+    return list.filter(item => {
+      let taskName = item.name.toLowerCase();
+      return taskName.indexOf(textSearch.toLowerCase()) !== -1
+    });
   }
   
   return (
@@ -166,6 +173,7 @@ function App() {
       <div className="col-12 col-lg-6">
         <Search textSearch={textSearch}
                 handleSearch = {handleSearch}
+                handleClearSearch = {handleClearSearch}
         />
       </div>
       <div className="col-12 col-lg-3 text-center">
